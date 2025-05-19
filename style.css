@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  background-color: #87CEEB; /* 空色 */
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: #228B22; /* 地面の緑 */
+}
+【game.js】
+js
+コピーする
+編集する
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+let marioX = 50;
+let marioY = 300;
+let velocityY = 0;
+let gravity = 1;
+let isJumping = false;
+
+document.addEventListener("keydown", function (e) {
+  if (e.code === "Space" && !isJumping) {
+    velocityY = -15;
+    isJumping = true;
+  }
+});
